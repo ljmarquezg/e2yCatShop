@@ -1,0 +1,9 @@
+.welcome {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.welcome img {
+    display: block;
+    margin: 1rem auto;
+}

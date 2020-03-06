@@ -1,0 +1,97 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "T-1meowsand",
+      "productImage": "/products/t-1-meowsand.jpg",
+      "price": {
+        "original": 100.00,
+        "discounted": 80.00
+      },
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Yelled At Cat",
+      "productImage": "/products/yelled-at-cat.jpg",
+      "price": {
+        "original": 40.00,
+        "discounted": 40.00
+      },
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "Cats the Movie",
+      "productImage": "/products/cats-the-movie.jpg",
+      "price": {
+        "original": 10000.00,
+        "discounted": 0.99
+      },
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Grumpy Cat",
+      "productImage": "/products/grumpy-cat.jpg",
+      "price": {
+        "original": 249.00,
+        "discounted": 249.00
+      },
+      "inStock": false
+    },
+    {
+      "id": 5,
+      "name": "Garfield",
+      "productImage": "/products/garfield.jpg",
+      "price": {
+        "original": 500.00,
+        "discounted": 500.00
+      },
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Generic Cat",
+      "productImage": "/products/generic-cat.jpg",
+      "price": {
+        "original": 10.00,
+        "discounted": 10.00
+      },
+      "inStock": true
+    },
+    {
+      "id": 7,
+      "name": "Big Cat",
+      "productImage": "/products/big-cat.jpg",
+      "price": {
+        "original": 30.00,
+        "discounted": 30.00
+      },
+      "inStock": true
+    },
+    {
+      "id": 8,
+      "name": "Impostor Cat",
+      "productImage": "/products/impostor-cat.jpg",
+      "price": {
+        "original": 78.12,
+        "discounted": 78.12
+      },
+      "inStock": false
+    },
+    {
+      "id": 9,
+      "name": "Impostor Cat",
+      "productImage": "/products/business-cat.png",
+      "price": {
+        "original": 10000.00,
+        "discounted": 10000.00
+      },
+      "inStock": true
+    }
+  ],
+  "cart": [
+
+  ]
+}
