@@ -1,43 +1,46 @@
 import React, { Component } from 'react';
-import { addToCart } from '../../actions/products/productActions';
 
 const getDiscount = (price, discount) => {
     console.log(price, discount)
-    if(price !== discount){
+    if (price !== discount) {
         return (<span>
-            <h3 className="small">
-                <span>Precio Neto:</span>
-                <span className="line-through">{price}</span>
+            <h3 className="price">
+                <span className="line-through">{price}&euro;</span>&nbsp;<span>{discount}&euro;</span>
             </h3>
-            <h5>
-                <span>Precio Descuento</span>{discount}
-            </h5>
         </span>)
     }
-    return  <h3 className="line-through small">{price}</h3>;
+    return <h3 className="price"><span>{price}&euro;</span></h3>;
 
 }
-class Product extends Component {
-    constructor(props) {
-        super(props);
-        this.addToCart = addToCart.bind(this);
-      }
-    render() {
-    return (
-        <div className="col xl3 l4 m6 s12">
-            <div class="card">
-            <div class="card-image">
-                <img src={this.props.product.productImage}/>
-                <h2 class="card-title">{this.props.product.name}</h2>
-            </div>
-            <div class="card-content">
-                {getDiscount(this.props.product.price.original, this.props.product.price.discounted)}
-            </div>
-            <div class="card-action">
-                <button type="button" onClick={this.addToCart}className="btn btn-block btn-primary waves-effect">This is a link</button>
-            </div>
-            </div>
-    </div>);
+
+const renderButton = (inStock, action) => {
+    if (inStock) {
+        return (<button type="button" onClick={action} className="btn btn-block btn-primary waves-effect">
+            <i class="ion ion-ios-cart-outline"></i>
+        </button>
+        )
     }
-  }
+    return <h5 class="m0">Out of Stock</h5>
+}
+
+class Product extends Component {
+    addToCartHandler = () => {
+        this.props.addToCartClick(this.props.product);
+    }
+    render() {
+        return (
+            <div className="card" key={this.props.key}>
+                <div className="card-image">
+                    <img src={this.props.product.productImage} alt="" />
+                </div>
+                <div className="card-content">
+                    <h2 className="card-title">{this.props.product.name}</h2>
+                    {getDiscount(this.props.product.price.original, this.props.product.price.discounted)}
+                </div>
+                <div className="card-action">
+                    {renderButton(this.props.product.inStock, this.addToCartHandler)}
+                </div>
+            </div>);
+    }
+}
 export default Product;

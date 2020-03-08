@@ -1,10 +1,11 @@
 import React  from "react";
-import { Provider, connect } from "react-redux";
+import { Provider } from "react-redux";
 
 import store from "./store";
 import "./App.css";
 import Root from "./containers/Root";
 import {getProductsAction} from './actions/products/productActions'
+import Navigation from "./components/navigation/Navigation";
 
 class App extends React.Component {
   componentDidMount(){
@@ -14,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
+        <Navigation/>
         <Root />
       </Provider>
     );

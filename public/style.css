@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(./montserrat.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body,
+html {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.m0{
+    margin: 0;
+}
+.row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.row .col {
+    padding: 0 16px;
+    min-height: 1px;
+}
+
+.col.disabled img {
+    filter: grayscale(1)
+}
+
+.card {
+    position: relative;
+    margin: .5rem 0 1rem 0;
+    background-color: #fff;
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    border-radius: 2px;
+    width: 320px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-image {
+    position: relative;
+    height: 240px;
+    display: flex;
+}
+
+.card .card-image img {
+    display: block;
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card .card-content .card-title {
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+.card .card-title {
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.card .price {
+    font-size: 16px;
+    margin: 16px 0;
+}
+
+.card .card-action {
+    background-color: inherit;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    position: relative;
+    padding: 16px 24px;
+    height: 64px;
+}

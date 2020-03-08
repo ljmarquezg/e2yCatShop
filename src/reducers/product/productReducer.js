@@ -1,8 +1,8 @@
-import {GET_PRODUCTS, GET_PRODUCTS_ERROR, LOADING, ADD_TO_CART}from "../../actions/actionTypes";
+import { ADD_TO_CART, GET_PRODUCTS, GET_ERROR, LOADING, GET_CART } from "../../actions/actionTypes";
 
 const INITIAL_STATE = {
   productList: [],
-  cartItems: [], 
+  cart: [],
   error: null,
   loading: true
 };
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case LOADING:
-      return{
+      return {
         ...state,
         error: null,
         loading: true,
@@ -22,15 +22,20 @@ export default (state = INITIAL_STATE, action) => {
         error: null,
         loading: false
       }
-      case ADD_TO_CART:
+    case GET_CART:
       return {
         ...state,
-        productList: action.productList,
-        cartItems: action.item
+        cart: action.payload,
+        error: null,
+        loading: false
       }
-    case GET_PRODUCTS_ERROR:
+    case ADD_TO_CART:
       return {
-        productList: [],
+        ...state,
+        cartItems: action.payload
+      }
+    case GET_ERROR:
+      return {
         error: action.payload.error
       }
     default:
